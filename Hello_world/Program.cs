@@ -2,9 +2,9 @@
 
 namespace Hello_world
 {
-	class Program
+	class Program //
 	{
-		static void Main(string[] args)
+		static void Main(string[] args)  //metoda main; void = nená návratový typ
 		{
 			Console.WriteLine("Hello World!");
 		}
