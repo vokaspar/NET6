@@ -82,11 +82,7 @@ namespace Hello_world
 			Console.WriteLine("Napis sve jmeno:");
 			var input = Console.ReadLine();
 
-			if (input == "Bob" || input == "Alice")
-            {
-				Console.WriteLine($"Vitej zpet {input}");
-			}
-			else
+			
 			Hello(input);
 
 
@@ -109,7 +105,20 @@ namespace Hello_world
 		}
 		static void Hello(string jmeno)
 		{
-			Console.WriteLine($"Hello,tvoje jméno: {jmeno}");
+			 if (name == "Bob" || name == "Alice")
+            if (name.ToLower() == "bob" || name.ToLower() == "alice")
+                Console.WriteLine($"Welcome back {name}");
+            else
+                Console.WriteLine($"Hello {name}");
+
+			/*
+				  if (name == "Bob" || name == "Alice")
+			   if (name.ToLower() == "bob" || name.ToLower() == "alice")
+				   Console.WriteLine($"Welcome back {name}");
+			   else
+				   Console.WriteLine($"Hello {name}");
+
+			  */
 		}
 		static string VetsiMensi(int a, int b)  //int = návratový typ; (a, b)= proměnné
 		{
