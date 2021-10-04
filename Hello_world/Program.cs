@@ -69,7 +69,7 @@ namespace Hello_world
 			if (a2 > b2)
 				Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {a2}");
 
-			Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {b2}");
+			Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {b2}"); 
 
 		}
 
