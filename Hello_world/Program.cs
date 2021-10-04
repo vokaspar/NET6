@@ -75,7 +75,7 @@ namespace Hello_world
 		}
 		static void VetsiMensi(int a, int b)  //int = návratový typ; (a, b)= proměnné
 		{
-			if (a>b)
+			if (a>=b)
             {
 				Console.WriteLine($"Vetsi z cisel {a} a {b} je {a}");
 
