@@ -27,7 +27,7 @@ namespace Hello_world
 			Hello("Vojta");
 			//	Console.WriteLine(suma);
 
-			int a = 20;
+			int a = 30;
 			int b = 30;
 			Console.WriteLine($"a: {a}, b:{b}");
 
@@ -52,24 +52,38 @@ namespace Hello_world
 
 			}
 
-			VetsiMensi(15, 15);
-			Console.WriteLine($"Vetsi z cisel {a} a {b} je {a}");
 
+			VetsiMensi(a, b);
+
+			Console.WriteLine($"Vetsi z cisel {a} a {b} je {VetsiMensi(a, b)}");
 
 			const int c_a = 155;
 			const int c_b = 255;
 
-			var a2 = 155;
-			var b2 = 50;
+			var a2 = 255;
+			var b2 = 5;
 
-			if (a2 == c_a)
-				Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {b2}");
-			if (a2 == c_b)
-				Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {b2}");
-			if (a2 > b2)
-				Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {a2}");
+			// zjistit jestli "a" je vetsi nez "b"
+			// ale pokud "a" je kterakoliv z konstant
+			// tak vrat false (tzn jakoby a v tomto pripade bylo vzdy mensi)
 
-			Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {b2}"); 
+			bool result;
+
+			if (a2 == c_a || a == c_b)
+				result = false;
+			else if (a2 > b2)
+				result = true;
+			else
+				result = false;
+
+			Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {result}");
+
+
+			Console.WriteLine("Napis sve jmeno:");
+			var input = Console.ReadLine();
+
+
+			Hello(input);
 
 		}
 
@@ -93,19 +107,20 @@ namespace Hello_world
 		static string VetsiMensi(int a, int b)  //int = návratový typ; (a, b)= proměnné
 		{
 			int c;
-			if (a >= b)
-				//nejsou potřeba závorky, pokud je jen jeden příkaz
-				//Console.WriteLine($"Vetsi z cisel {a} a {b} je {a}");
+			if (a > b)
+			{//nejsou potřeba závorky, pokud je jen jeden příkaz
+			 //Console.WriteLine($"Vetsi z cisel {a} a {b} je {a}");
 				c = a;
-
-
+				return c.ToString();
+			}
 			else if (a == b)
 				return "stejné";
 			{
 				c = b;
+				return c.ToString();
 			}
 
-			return c.ToString();
+			
 		}
 
 
