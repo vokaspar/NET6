@@ -3,9 +3,14 @@
 //C++ - jazyk vs .NET - platforma, kompilátor, runtime
 //středník na konec příkazu
 //metoda se deklaruje (static) +  datový typ výstupu + název metody + (vstup do metody)
-//klíčové slovo var  dokáže datový formát rozpoznat a nastavit - explicitně(dané programátorem) vs implicitně (vybírá var) nastavení formátu 
+//klíčové slovo var  dokáže datový formát rozpoznat a nastavit - explicitně(dané programátorem) vs implicitně (vybírá var) nastavení formátu  https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types
+//		The literal without suffix or with the d or D suffix is of type double
+//		The literal with the f or F suffix is of type float
+//		The literal with the m or M suffix is of type decimal
+//		DateTime date = new DateTime(1999, 12, 31);
 //namepsace - sekce kodu, organizace, členění
 //class 
+
 
 namespace Hello_world
 {
@@ -27,7 +32,7 @@ namespace Hello_world
 			Console.WriteLine($"a: {a}, b:{b}");
 
 
-			int c = a;
+			int c = a; //prohození hodnot v proměnných
 			int d = b;
 
 			 a = d;
@@ -36,6 +41,18 @@ namespace Hello_world
 
 			Console.WriteLine($"a: {a}, b:{b}");
 
+
+			if (a == 20)
+			{
+				Console.Write("jsem v podmince");
+			}
+			else
+            {
+				Console.Write("NEjsem v podmince");
+
+			}
+
+			VetsiMensi(6, 3);
 
 		}
 
@@ -55,6 +72,18 @@ namespace Hello_world
 		static void Hello(string jmeno)
 		{
 			Console.WriteLine($"Hello,tvoje jméno: {jmeno}");
+		}
+		static void VetsiMensi(int a, int b)  //int = návratový typ; (a, b)= proměnné
+		{
+			if (a>b)
+            {
+				Console.WriteLine($"Vetsi z cisel {a} a {b} je {a}");
+
+			}
+			else
+            {
+				Console.WriteLine($"Vetsi z cisel {a} a {b} je {b}");
+			}
 		}
 
 
