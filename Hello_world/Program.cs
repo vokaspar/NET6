@@ -82,8 +82,15 @@ namespace Hello_world
 			Console.WriteLine("Napis sve jmeno:");
 			var input = Console.ReadLine();
 
-
+			if (input == "Bob" || input == "Alice")
+            {
+				Console.WriteLine($"Vitej zpet {input}");
+			}
+			else
 			Hello(input);
+
+
+
 
 		}
 
