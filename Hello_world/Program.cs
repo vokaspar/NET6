@@ -52,7 +52,24 @@ namespace Hello_world
 
 			}
 
-			VetsiMensi(6, 3);
+			VetsiMensi(15, 15);
+			Console.WriteLine($"Vetsi z cisel {a} a {b} je {a}");
+
+
+			const int c_a = 155;
+			const int c_b = 255;
+
+			var a2 = 155;
+			var b2 = 50;
+
+			if (a2 == c_a)
+				Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {b2}");
+			if (a2 == c_b)
+				Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {b2}");
+			if (a2 > b2)
+				Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {a2}");
+
+			Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {b2}");
 
 		}
 
@@ -73,17 +90,22 @@ namespace Hello_world
 		{
 			Console.WriteLine($"Hello,tvoje jméno: {jmeno}");
 		}
-		static void VetsiMensi(int a, int b)  //int = návratový typ; (a, b)= proměnné
+		static string VetsiMensi(int a, int b)  //int = návratový typ; (a, b)= proměnné
 		{
-			if (a>=b)
-            {
-				Console.WriteLine($"Vetsi z cisel {a} a {b} je {a}");
+			int c;
+			if (a >= b)
+				//nejsou potřeba závorky, pokud je jen jeden příkaz
+				//Console.WriteLine($"Vetsi z cisel {a} a {b} je {a}");
+				c = a;
 
+
+			else if (a == b)
+				return "stejné";
+			{
+				c = b;
 			}
-			else
-            {
-				Console.WriteLine($"Vetsi z cisel {a} a {b} je {b}");
-			}
+
+			return c.ToString();
 		}
 
 
