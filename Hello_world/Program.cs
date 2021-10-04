@@ -32,29 +32,6 @@ namespace Hello_world
 			Console.WriteLine($"a: {a}, b:{b}");
 
 
-			int c = a; //prohození hodnot v proměnných
-			int d = b;
-
-			 a = d;
-			 b = c;
-
-
-			Console.WriteLine($"a: {a}, b:{b}");
-
-
-			if (a == 20)
-			{
-				Console.Write("jsem v podmince");
-			}
-			else
-            {
-				Console.Write("NEjsem v podmince");
-
-			}
-
-
-			VetsiMensi(a, b);
-
 			Console.WriteLine($"Vetsi z cisel {a} a {b} je {VetsiMensi(a, b)}");
 
 			const int c_a = 155;
@@ -78,12 +55,22 @@ namespace Hello_world
 
 			Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {result}");
 
-
-			Console.WriteLine("Napis sve jmeno:");
+			/*Console.WriteLine("Napis sve jmeno:");
 			var input = Console.ReadLine();
-
-			
 			Hello(input);
+
+			int num = int.Parse(input); //převod stringu na číslo
+			string str = num.ToString(); //převod čísla na string
+			double doub = (double)num;
+			*/
+
+
+			Console.WriteLine("Stupne F");
+			int input2;
+			var input = Console.ReadLine();
+			input2 = int.Parse(input);
+			teplota(input2);
+
 
 
 
@@ -105,11 +92,11 @@ namespace Hello_world
 		}
 		static void Hello(string jmeno)
 		{
-			 if (name == "Bob" || name == "Alice")
-            if (name.ToLower() == "bob" || name.ToLower() == "alice")
-                Console.WriteLine($"Welcome back {name}");
+			 if (jmeno == "Bob" || jmeno == "Alice")
+            if (jmeno.ToLower() == "bob" || jmeno.ToLower() == "alice")
+                Console.WriteLine($"Welcome back {jmeno}");
             else
-                Console.WriteLine($"Hello {name}");
+                Console.WriteLine($"Hello {jmeno}");
 
 			/*
 				  if (name == "Bob" || name == "Alice")
@@ -136,7 +123,17 @@ namespace Hello_world
 				return c.ToString();
 			}
 
+
+		}
+		static double teplota(int a)  //int = návratový typ; (a, b)= proměnné
+		{
+			/*int*/
+			//Chcete-li převést teploty ve stupních Fahrenheita na Celsia, odečtěte 32 a vynásobte je. 5556 (nebo 5/9).
+			var suma =(a -32) *0.5556;
+			//int suma = a + b;
 			
+			Console.WriteLine($" {a} Stupnu F je  {suma} stupnu C");  //interpolated string
+			return suma;
 		}
 
 
