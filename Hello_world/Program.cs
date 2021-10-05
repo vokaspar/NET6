@@ -35,19 +35,89 @@ namespace Hello_world
 		static void Main(string[] args)  //metoda main; void = nená návratový typ
         {
             //  prvni_den();
-            // Console.WriteLine("Napis co je potreba:");
-            //var input = Console.ReadLine();
-            //var input_int = int.Parse(input);
+            Console.WriteLine("Napis co je potreba:");
+            var input = Console.ReadLine();
+            //  var input_int = prevod_na_cislo(input);
+            // Console.WriteLine(input_int);
 
+
+            Point point1 = new Point(1.5, 5.6);
+            Point point_def = Point.GetDefaultPoint();
+
+            
+            Console.WriteLine($"Bod:{point1}");
+
+
+            Console.WriteLine($"Obsah:{point1.obsah()}");
             //  Console.WriteLine(generace(input)); //VYPIS GENERACI
             //  Console.WriteLine(den_v_tydnu(input)); //VYPIS den v tydnu
             //  Suda_konec(input_int);
             //  Soucet_do_cisla(input_int);
 
-            Point point1 = new Point(1.5, 5.6);
-            Console.WriteLine($"Bod:{point1}");
+            //  PridavaniOsob();
 
 
+
+
+        }
+
+        static void TuplesAndExceptions()
+        {
+            bool succ;
+            int val;
+
+            // ulozeni tuplu to Tuple typu
+            var tupleResult = MyTryParse("150.0");
+            succ = tupleResult.Item1;
+            val = tupleResult.Item2;
+
+            // ulozeni tuplu to Tuple typu - pojmenovane itemy
+            tupleResult = MyTryParse("150.0");
+            succ = tupleResult.success;
+            val = tupleResult.value;
+
+            // rozlozeni tuplu primo do promennych
+            (succ, val) = MyTryParse("150.0");
+
+
+
+
+        }
+
+        static (bool success, int value) MyTryParse(string input)
+        {
+            return (success: true, value: 10);
+        }
+
+        private static int prevod_na_cislo(string input)
+        {
+            try
+            {
+                return int.Parse(input);
+            }
+            catch (FormatException ex) //FormatException = druh chyby
+            {
+                Console.WriteLine("Nemohu převést na číslo");
+                Console.WriteLine(ex.ToString()); //celý popis chyby
+                return 0;
+            }
+            catch (DivideByZeroException ex) //DivideByZeroException = druh chyby
+            {
+                Console.WriteLine("Dělíš nulou");
+                return 0;
+            }
+            catch (Exception ex) //všechny ostatní
+            {
+                Console.WriteLine("Nespecifikovaná chyba");
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+
+
+        }
+
+        private static void PridavaniOsob()
+        {
             Person p1 = new Person();   //vytvořili jsme intance třídy(šablony) person, new = konstruktor
 
             p1.FirstName = "Adam";
@@ -58,13 +128,10 @@ namespace Hello_world
 
             p3.Age = 36;
 
-            Person p4 = new Person("Adela", "pešková",46);
+            Person p4 = new Person("Adela", "pešková", 46);
 
 
             Console.WriteLine($"Osoba:{p1.GetFullName()},{p1},{p3},{p3.Age},{p4},{p4.Age}"); //díky instanční mětode , kterou jsme přepsali původní to_string, je totožné p1.GetFullName s {p1}
-
-
-
         }
 
         private static void Soucet_do_cisla  (int input_int)
