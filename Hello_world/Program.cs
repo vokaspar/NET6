@@ -18,31 +18,34 @@ namespace Hello_world
 	{
 		static void Main(string[] args)  //metoda main; void = nená návratový typ
         {
-			//  prvni_den();
-			Console.WriteLine("Napis svuj rok narozeni");
-			var input = Console.ReadLine();
-			var input_int = int.Parse(input);
-			var x = "generace";
-			if (input_int < 1946)
-				x = "N/A";
-			else if (input_int < 1965)
-				x = "Baby Boomerss";
-			else if (input_int < 1981)
-				x = "Generation X";
-			else if (input_int < 1997)
-				x = "Millenials";
-			else if (input_int < 2013)
-				x = "Generation Z";
-			else if (input_int <= 2021)
-				x = "Generation Alpha";
-			else x = "Zkontroluj si zadany rok";
+            //  prvni_den();
+            Console.WriteLine("Napis svuj rok narozeni");
+            var input = Console.ReadLine();
+            Console.WriteLine(generace(input));
 
 
+        }
 
-			Console.WriteLine(x);
+        private static string generace(string input)
+        {
+            var input_int = int.Parse(input);
+            var x = "generace";
+            if (input_int < 1946)
+                x = "N/A";
+            else if (input_int < 1965)
+                x = "Baby Boomerss";
+            else if (input_int < 1981)
+                x = "Generation X";
+            else if (input_int < 1997)
+                x = "Millenials";
+            else if (input_int < 2013)
+                x = "Generation Z";
+            else if (input_int <= 2021)
+                x = "Generation Alpha";
+            else x = "Zkontroluj si zadany rok";
 
-
-		}
+            return x;
+        }
 
         private static void prvni_den()
         {
