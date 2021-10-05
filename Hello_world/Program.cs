@@ -17,45 +17,73 @@ namespace Hello_world
 	class Program //
 	{
 		static void Main(string[] args)  //metoda main; void = nená návratový typ
-		{
-			Console.WriteLine("Hello World!");
-			int sum = Add(5, 3);
-			Console.WriteLine(sum);
-			int soucet = AddAndPrint(6, 3);
-			int soucet_2 = soucet + 1;
-			Console.WriteLine(soucet_2);
-			Hello("Vojta");
-			//	Console.WriteLine(suma);
+        {
+			//  prvni_den();
+			Console.WriteLine("Napis svuj rok narozeni");
+			var input = Console.ReadLine();
+			var input_int = int.Parse(input);
+			var x = "generace";
+			if (input_int < 1946)
+				x = "N/A";
+			else if (input_int < 1965)
+				x = "Baby Boomerss";
+			else if (input_int < 1981)
+				x = "Generation X";
+			else if (input_int < 1997)
+				x = "Millenials";
+			else if (input_int < 2013)
+				x = "Generation Z";
+			else if (input_int <= 2021)
+				x = "Generation Alpha";
+			else x = "Zkontroluj si zadany rok";
 
-			int a = 30;
-			int b = 30;
-			Console.WriteLine($"a: {a}, b:{b}");
 
 
-			Console.WriteLine($"Vetsi z cisel {a} a {b} je {VetsiMensi(a, b)}");
+			Console.WriteLine(x);
 
-			const int c_a = 155;
-			const int c_b = 255;
 
-			var a2 = 255;
-			var b2 = 5;
+		}
 
-			// zjistit jestli "a" je vetsi nez "b"
-			// ale pokud "a" je kterakoliv z konstant
-			// tak vrat false (tzn jakoby a v tomto pripade bylo vzdy mensi)
+        private static void prvni_den()
+        {
+            Console.WriteLine("Hello World!");
+            int sum = Add(5, 3);
+            Console.WriteLine(sum);
+            int soucet = AddAndPrint(6, 3);
+            int soucet_2 = soucet + 1;
+            Console.WriteLine(soucet_2);
+            Hello("Vojta");
+            //	Console.WriteLine(suma);
 
-			bool result;
+            int a = 30;
+            int b = 30;
+            Console.WriteLine($"a: {a}, b:{b}");
 
-			if (a2 == c_a || a == c_b)
-				result = false;
-			else if (a2 > b2)
-				result = true;
-			else
-				result = false;
 
-			Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {result}");
+            Console.WriteLine($"Vetsi z cisel {a} a {b} je {VetsiMensi(a, b)}");
 
-			/*Console.WriteLine("Napis sve jmeno:");
+            const int c_a = 155;
+            const int c_b = 255;
+
+            var a2 = 255;
+            var b2 = 5;
+
+            // zjistit jestli "a" je vetsi nez "b"
+            // ale pokud "a" je kterakoliv z konstant
+            // tak vrat false (tzn jakoby a v tomto pripade bylo vzdy mensi)
+
+            bool result;
+
+            if (a2 == c_a || a == c_b)
+                result = false;
+            else if (a2 > b2)
+                result = true;
+            else
+                result = false;
+
+            Console.WriteLine($"Vetsi z cisel {a2} a {b2} je {result}");
+
+            /*Console.WriteLine("Napis sve jmeno:");
 			var input = Console.ReadLine();
 			Hello(input);
 
@@ -64,21 +92,11 @@ namespace Hello_world
 			double doub = (double)num;
 			*/
 
-
-			Console.WriteLine("Stupne F");
-			int input2;
-			var input = Console.ReadLine();
-			input2 = int.Parse(input);
-			teplota(input2);
+            teplota_F_C.prevod_F_C();
+        }
 
 
-
-
-
-		}
-
-		
-		static int Add(int a, int b)
+        static int Add(int a, int b)
 		{
 			return a + b;  //return ukončuje metodu vše zatím je ignorováno
 		}
@@ -125,17 +143,7 @@ namespace Hello_world
 
 
 		}
-		static double teplota(int a)  //int = návratový typ; (a, b)= proměnné
-		{
-			/*int*/
-			//Chcete-li převést teploty ve stupních Fahrenheita na Celsia, odečtěte 32 a vynásobte je. 5556 (nebo 5/9).
-			var suma =(a -32) *0.5556;
-			//int suma = a + b;
-			
-			Console.WriteLine($" {a} Stupnu F je  {suma} stupnu C");  //interpolated string
-			return suma;
-		}
-
+		
 
 
 
