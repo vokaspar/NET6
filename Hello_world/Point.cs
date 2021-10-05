@@ -18,7 +18,7 @@ namespace Hello_world
         public double Y { get; set; }
         public override string ToString()  //přepsání původní metody ToString
         {
-            return "Souřadnice: " + X + "," + Y;
+            return "Souřadnice X: " + X + ", souřadnice Y: " + Y;
         }
 
     }
