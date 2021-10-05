@@ -35,24 +35,48 @@ namespace Hello_world
 		static void Main(string[] args)  //metoda main; void = nená návratový typ
         {
             //  prvni_den();
-            Console.WriteLine("Napis co je potreba:");
-            var input = Console.ReadLine();
-            var input_int = int.Parse(input);
+           // Console.WriteLine("Napis co je potreba:");
+            //var input = Console.ReadLine();
+            //var input_int = int.Parse(input);
 
             //  Console.WriteLine(generace(input)); //VYPIS GENERACI
             //  Console.WriteLine(den_v_tydnu(input)); //VYPIS den v tydnu
             //  Suda_konec(input_int);
-            soucet_do_cisla(input_int);
+            //  Soucet_do_cisla(input_int);
+
+            Person p1 = new Person();   //vytvořili jsme intance třídy(šablony) person, new = konstruktor
+
+            p1.FirstName = "Adam";
+            p1.LastName = "Smith";
+            p1.Age = 30;
+
+            Person p3 = new Person("Milan", "Pešek");
+
+            p3.Age = 36;
+
+            Person p4 = new Person("Adela", "pešková",46);
+
+
+            Console.WriteLine($"Osoba:{p1.GetFullName()},{p1},{p3},{p3.Age},{p4},{p4.Age}"); //díky instanční mětode , kterou jsme přepsali původní to_string, je to totožné
+
+
+
+
+
+
+
+
+
         }
 
-        private static void soucet_do_cisla  (int input_int)
+        private static void Soucet_do_cisla  (int input_int)
         { var x = 0;
           var y = "";
         
             for (int i = 1; i <= input_int; i++)
             {
                 x = x + i;
-                y = y + i + "+";
+                y =  y  + i + "+";
 
                // numbers = Add[i] { i };
             }
