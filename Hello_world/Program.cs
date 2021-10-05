@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 //C++ - jazyk vs .NET - platforma, kompilátor, runtime
 //středník na konec příkazu
@@ -35,30 +37,82 @@ namespace Hello_world
 		static void Main(string[] args)  //metoda main; void = nená návratový typ
         {
             //  prvni_den();
-            Console.WriteLine("Napis co je potreba:");
-            var input = Console.ReadLine();
+            //   Console.WriteLine("Napis co je potreba:");
+            //   var input = Console.ReadLine();
             //  var input_int = prevod_na_cislo(input);
             // Console.WriteLine(input_int);
 
+            //array - jen některé typy
+            int[] pole_intu = new[] { 5, 12, 155, -5268 };
 
-            Point point1 = new Point(1.5, 5.6);
-            Point point_def = Point.GetDefaultPoint();
+            //list MŮŽE BÝ jakýkoliv typu
 
-            
-            Console.WriteLine($"Bod:{point1}");
+            List<int> list_intu = new List<int>();
+
+            List<Person> people = new List<Person>();
+
+            var p1 = new Person("Pepa", "Pr",41);
+            var p2 = new Person("Ji", "Novak",74);
+            var p3 = new Person("Ad", "AE",12);
+
+            people.Add(p1);
+            people.Add(p2);
+            people.Add(p3);
+
+            string file = "people.txt";
+
+            foreach (Person p in people)
+            {
+                Console.WriteLine(p);
+                var personAsString = p.FirstName + ";" + p.LastName + ";" + p.Age+Environment.NewLine; //přidání středníků a nového řádku
+
+                File.AppendAllText(file, personAsString);
+            }
+            Console.WriteLine($"Ulozeno do souboru {file}");
 
 
-            Console.WriteLine($"Obsah:{point1.obsah()}");
+            List<Person> people2 = new List<Person>();
+
+            var text = File.ReadLines(file);
+
+            foreach(File.ReadAllLines in file)
+
+            Console.WriteLine(text);
+
+
+
+
+
+
+
+
+
+            //pridavani_bodu_pointu();
+            //  PridavaniOsob();
             //  Console.WriteLine(generace(input)); //VYPIS GENERACI
             //  Console.WriteLine(den_v_tydnu(input)); //VYPIS den v tydnu
             //  Suda_konec(input_int);
             //  Soucet_do_cisla(input_int);
 
-            //  PridavaniOsob();
 
 
 
 
+        }
+
+        private static void pridavani_bodu_pointu()
+        {
+            Point point1 = new Point(1.5, 5.6);
+            Point point_def = Point.GetDefaultPoint();
+            var point_ini = new Point() { X = 100, Y = 23 }; //inicializátor, není potřeba žádný konstruktor
+            var point_ini2 = new Point(50, 20) { Z = 46 }; //inicializátor, není potřeba žádný konstruktor
+
+
+            Console.WriteLine($"Bod:{point1}");
+            Console.WriteLine($"Bod:{point_ini2}");
+
+
+            Console.WriteLine($"Obsah:{point1.obsah()}");
         }
 
         static void TuplesAndExceptions()

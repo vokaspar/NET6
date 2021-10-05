@@ -10,7 +10,7 @@ namespace Hello_world
 {
     class Person
     {
-        public Person()  //prázdný konstruktor
+        public Person()  //prázdný konstruktor //jednotlivé osoby jsou jednotlivé instance
         {
             FirstName = "John"; //defaultní hodnoty
             LastName = "Doe";
