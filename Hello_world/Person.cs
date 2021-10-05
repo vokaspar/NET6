@@ -10,7 +10,7 @@ namespace Hello_world
 {
     class Person
     {
-        public Person()
+        public Person()  //prázdný konstruktor
         {
             FirstName = "John"; //defaultní hodnoty
             LastName = "Doe";
@@ -26,6 +26,7 @@ namespace Hello_world
             LastName = lastName;
             Age = vek;
         }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

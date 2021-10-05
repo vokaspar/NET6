@@ -35,7 +35,7 @@ namespace Hello_world
 		static void Main(string[] args)  //metoda main; void = nená návratový typ
         {
             //  prvni_den();
-           // Console.WriteLine("Napis co je potreba:");
+            // Console.WriteLine("Napis co je potreba:");
             //var input = Console.ReadLine();
             //var input_int = int.Parse(input);
 
@@ -43,6 +43,10 @@ namespace Hello_world
             //  Console.WriteLine(den_v_tydnu(input)); //VYPIS den v tydnu
             //  Suda_konec(input_int);
             //  Soucet_do_cisla(input_int);
+
+            Point point1 = new Point(1.5, 5.6);
+            Console.WriteLine($"Bod:{point1}");
+
 
             Person p1 = new Person();   //vytvořili jsme intance třídy(šablony) person, new = konstruktor
 
@@ -57,13 +61,7 @@ namespace Hello_world
             Person p4 = new Person("Adela", "pešková",46);
 
 
-            Console.WriteLine($"Osoba:{p1.GetFullName()},{p1},{p3},{p3.Age},{p4},{p4.Age}"); //díky instanční mětode , kterou jsme přepsali původní to_string, je to totožné
-
-
-
-
-
-
+            Console.WriteLine($"Osoba:{p1.GetFullName()},{p1},{p3},{p3.Age},{p4},{p4.Age}"); //díky instanční mětode , kterou jsme přepsali původní to_string, je totožné p1.GetFullName s {p1}
 
 
 
