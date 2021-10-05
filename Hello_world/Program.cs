@@ -11,6 +11,22 @@
 //namepsace - sekce kodu, organizace, členění
 //class 
 
+//int[] numbers = new[] { 10, 11, 12, 13, 20, 67 };
+//for (int i =0; numbers.Lenght;i++)
+//    {
+//        var num = numbers [i];
+//        Console.WriteLine(num);
+//    }
+
+//foreach (int number in numbers)
+//{
+//    Console.WriteLine(number);
+//}
+//int counter = 0;
+//while (counter <5)
+//{
+//    counter++;
+//}
 
 namespace Hello_world
 {
@@ -19,20 +35,57 @@ namespace Hello_world
 		static void Main(string[] args)  //metoda main; void = nená návratový typ
         {
             //  prvni_den();
-            Console.WriteLine("Napis svuj rok narozeni");
+            Console.WriteLine("Napis co je potreba:");
             var input = Console.ReadLine();
-            Console.WriteLine(generace(input));
+            //  Console.WriteLine(generace(input)); //VYPIS GENERACI
 
+            //  Console.WriteLine(den_v_tydnu(input)); //VYPIS den v tydnu
+
+
+            var input_int = int.Parse(input);
+
+            while (input_int % 2 == 0)
+            {
+                Console.WriteLine($"Cislo {input_int}, napis dalsi: ");
+                input_int = int.Parse(Console.ReadLine());
+
+            }
+        }
+
+        private static string Den_v_tydnu (string input)
+        {
+            var input_int = int.Parse(input);
+           switch(input_int)
+            {
+                case 1:
+                    return "pondělí";
+                   // break; //nemusí být, když je předtím return
+                case 2:
+                    return "úterý";
+                case 3:
+                    return "středa";
+                case 4:
+                    return "čtvrtek";
+                case 5:
+                    return "pátek";
+                case 6:
+                case 7:
+                    return "víkend";
+
+                default:
+                    return "zkontroluj si den";
+
+            }
 
         }
 
-        private static string generace(string input)
+        private static string Generace(string input)
         {
             var input_int = int.Parse(input);
             var x = "generace";
             if (input_int < 1946)
                 x = "N/A";
-            else if (input_int < 1965)
+            else if (input_int < 1965 && input_int >=1946)
                 x = "Baby Boomerss";
             else if (input_int < 1981)
                 x = "Generation X";
@@ -42,12 +95,12 @@ namespace Hello_world
                 x = "Generation Z";
             else if (input_int <= 2021)
                 x = "Generation Alpha";
-            else x = "Zkontroluj si zadany rok";
+            else x = $"Zkontroluj si zadany rok{x}";
 
             return x;
         }
 
-        private static void prvni_den()
+        private static void Prvni_den()
         {
             Console.WriteLine("Hello World!");
             int sum = Add(5, 3);
@@ -95,7 +148,7 @@ namespace Hello_world
 			double doub = (double)num;
 			*/
 
-            teplota_F_C.prevod_F_C();
+            teplota_F_C.Prevod_F_C();
         }
 
 

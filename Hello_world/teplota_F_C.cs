@@ -8,7 +8,7 @@ namespace Hello_world
 {
     class teplota_F_C
     {
-        public static void prevod_F_C()
+        public static void Prevod_F_C()
         {
             Console.WriteLine("Stupne F");
             double input_double;
@@ -17,10 +17,10 @@ namespace Hello_world
 
 
 
-            Console.WriteLine($" {input_double} Stupnu F je  {teplota(input_double)} stupnu C");  //interpolated string
+            Console.WriteLine($" {input_double} Stupnu F je  {Teplota(input_double)} stupnu C");  //interpolated string
         }
 
-        static double teplota(double a)  //int = návratový typ; (a, b)= proměnné
+        static double Teplota(double a)  //int = návratový typ; (a, b)= proměnné
         {
             /*int*/
             //Chcete-li převést teploty ve stupních Fahrenheita na Celsia, odečtěte 32 a vynásobte je. 5556 (nebo 5/9).
