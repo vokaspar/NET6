@@ -37,19 +37,41 @@ namespace Hello_world
             //  prvni_den();
             Console.WriteLine("Napis co je potreba:");
             var input = Console.ReadLine();
-            //  Console.WriteLine(generace(input)); //VYPIS GENERACI
-
-            //  Console.WriteLine(den_v_tydnu(input)); //VYPIS den v tydnu
-
-
             var input_int = int.Parse(input);
 
-            while (input_int % 2 == 0)
+            //  Console.WriteLine(generace(input)); //VYPIS GENERACI
+            //  Console.WriteLine(den_v_tydnu(input)); //VYPIS den v tydnu
+            //  Suda_konec(input_int);
+            soucet_do_cisla(input_int);
+        }
+
+        private static void soucet_do_cisla  (int input_int)
+        { var x = 0;
+          var y = "";
+        
+            for (int i = 1; i <= input_int; i++)
             {
-                Console.WriteLine($"Cislo {input_int}, napis dalsi: ");
+                x = x + i;
+                y = y + i + "+";
+
+               // numbers = Add[i] { i };
+            }
+
+            Console.WriteLine($"Soucet  {y}= {x}");
+
+        }
+
+        private static void Suda_konec(int input_int)
+        {
+            while (input_int % 2 != 0)  //%zbytek po deleni dvojkou
+            {
+                Console.WriteLine($"Cislo liche: {input_int}, napis dalsi: ");
                 input_int = int.Parse(Console.ReadLine());
+                
 
             }
+
+            
         }
 
         private static string Den_v_tydnu (string input)
